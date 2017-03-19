@@ -28,8 +28,6 @@ Run `bundle exec rspec`
 
 ### Story 1
 
-**Get the app setup locally by running bin/setup.**
-
 ```
 Story Title: As a reader I would like to have all articles imported so that I can read the blog.
 
