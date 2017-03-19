@@ -7,8 +7,7 @@
   .section
     - @authors.each do |author|
       .col-1-2.author
-        .col-1-4.avatar
-          = image_tag asset_url(author_avatar_url(author)), class: 'round full'
+        .col-1-4.avatar.ion-person.i5x
         .col-3-4.meta
           h2
             = author.name

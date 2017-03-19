@@ -18,26 +18,26 @@ describe Administrator::PagesController do
 
   it 'should create page' do
     expect do
-      post :create, page: { author_id: Author.first.id, body: @page.body, published: @page.published, title: @page.title }
+      post :create, params: { page: { author_id: Author.first.id, body: @page.body, published: @page.published, title: @page.title } }
     end.to change { Page.count }.by(1)
 
     expect(response).to redirect_to(page_path(assigns(:page)))
   end
 
   it 'should get edit' do
-    get :edit, id: @page
+    get :edit, params: { id: @page }
     expect(response.status).to eq 200
   end
 
   it 'should update page' do
-    patch :update, id: @page, page: { author_id: Author.first.id, body: @page.body, published: @page.published, title: @page.title }
+    patch :update, params: { id: @page, page: { author_id: Author.first.id, body: @page.body, published: @page.published, title: @page.title } }
 
     expect(response).to redirect_to(page_path(assigns(:page)))
   end
 
   it 'should destroy page' do
     expect do
-      delete :destroy, id: @page
+      delete :destroy, params: { id: @page }
     end.to change { Page.count }.by(-1)
 
     expect(response).to redirect_to(administrator_pages_path)

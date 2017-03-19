@@ -2,7 +2,7 @@ ruby ENV['CUSTOM_RUBY_VERSION'] || '2.2.2'
 
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.4'
+gem 'rails', '5.0.2'
 gem 'mysql2', '~> 0.3.18'
 gem 'sass-rails', '~> 5.0.4'
 gem 'uglifier', '>= 1.3.0'
@@ -28,6 +28,7 @@ end
 group :test do
   gem 'database_cleaner'
   gem 'selenium-webdriver'
+  gem 'rails-controller-testing'
 end
 
 group :development do
@@ -38,7 +39,4 @@ end
 group :production do
   gem 'rails_12factor'
   gem 'unicorn'
-  gem 'pg'
 end
-
-gem "codeclimate-test-reporter", group: :test, require: nil

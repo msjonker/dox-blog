@@ -16,7 +16,7 @@ describe PagesController do
 
   describe 'GET show' do
     it 'should show a page' do
-      get :show, id: @page
+      get :show, params: { id: @page }
 
       expect(response.status).to eq(200)
     end

@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -13,70 +12,66 @@
 
 ActiveRecord::Schema.define(version: 20151106190015) do
 
-  create_table "articles", force: :cascade do |t|
-    t.string   "title",           limit: 255
+  create_table "articles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "title"
     t.boolean  "featured",                      default: false
     t.text     "body",            limit: 65535
-    t.boolean  "published"
-    t.integer  "author_id",       limit: 4
+    t.boolean  "published",                     default: true
+    t.integer  "author_id"
     t.datetime "created_at",                                    null: false
     t.datetime "updated_at",                                    null: false
-    t.string   "slug",            limit: 255
-    t.string   "subtitle",        limit: 255
-    t.string   "hero_image_name", limit: 255
+    t.string   "slug"
+    t.string   "subtitle"
+    t.string   "hero_image_name"
+    t.index ["author_id"], name: "index_articles_on_author_id", using: :btree
+    t.index ["featured"], name: "index_articles_on_featured", using: :btree
+    t.index ["published"], name: "index_articles_on_published", using: :btree
+    t.index ["slug"], name: "index_articles_on_slug", unique: true, using: :btree
   end
 
-  add_index "articles", ["author_id"], name: "index_articles_on_author_id", using: :btree
-  add_index "articles", ["featured"], name: "index_articles_on_featured", using: :btree
-  add_index "articles", ["published"], name: "index_articles_on_published", using: :btree
-  add_index "articles", ["slug"], name: "index_articles_on_slug", unique: true, using: :btree
-
-  create_table "authors", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.string   "email",      limit: 255
+  create_table "authors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.string   "email"
     t.boolean  "active",                   default: true
-    t.string   "twitter",    limit: 255
+    t.string   "twitter"
     t.text     "about",      limit: 65535
     t.datetime "created_at",                              null: false
     t.datetime "updated_at",                              null: false
-    t.string   "slug",       limit: 255
+    t.string   "slug"
+    t.index ["slug"], name: "index_authors_on_slug", unique: true, using: :btree
   end
 
-  add_index "authors", ["slug"], name: "index_authors_on_slug", unique: true, using: :btree
-
-  create_table "friendly_id_slugs", force: :cascade do |t|
-    t.string   "slug",           limit: 255, null: false
-    t.integer  "sluggable_id",   limit: 4,   null: false
+  create_table "friendly_id_slugs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "slug",                      null: false
+    t.integer  "sluggable_id",              null: false
     t.string   "sluggable_type", limit: 50
-    t.string   "scope",          limit: 255
+    t.string   "scope"
     t.datetime "created_at"
+    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true, using: :btree
+    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
+    t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
+    t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
   end
 
-  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true, using: :btree
-  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
-  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
-  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
-
-  create_table "hero_images", force: :cascade do |t|
-    t.string "name", limit: 255
+  create_table "hero_images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
   end
 
-  create_table "pages", force: :cascade do |t|
-    t.string   "title",           limit: 255
+  create_table "pages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "title"
     t.boolean  "featured",                      default: false
     t.text     "body",            limit: 65535
     t.boolean  "published"
-    t.integer  "author_id",       limit: 4
+    t.integer  "author_id"
     t.datetime "created_at",                                    null: false
     t.datetime "updated_at",                                    null: false
-    t.string   "slug",            limit: 255
-    t.string   "hero_image_name", limit: 255
-    t.string   "subtitle",        limit: 255
+    t.string   "slug"
+    t.string   "hero_image_name"
+    t.string   "subtitle"
+    t.index ["author_id"], name: "index_pages_on_author_id", using: :btree
+    t.index ["featured"], name: "index_pages_on_featured", using: :btree
+    t.index ["slug"], name: "index_pages_on_slug", unique: true, using: :btree
   end
-
-  add_index "pages", ["author_id"], name: "index_pages_on_author_id", using: :btree
-  add_index "pages", ["featured"], name: "index_pages_on_featured", using: :btree
-  add_index "pages", ["slug"], name: "index_pages_on_slug", unique: true, using: :btree
 
   add_foreign_key "articles", "authors"
   add_foreign_key "pages", "authors"

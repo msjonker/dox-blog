@@ -18,26 +18,26 @@ describe Administrator::ArticlesController do
 
   it 'should create article' do
     expect do
-      post :create, article: { author_id: Author.first.id, body: @article.body, published: @article.published, title: @article.title }
+      post :create, params: { article: { author_id: Author.first.id, body: @article.body, published: @article.published, title: @article.title } }
     end.to change { Article.count }.by(1)
 
     expect(response).to redirect_to(article_path(assigns(:article)))
   end
 
   it 'should get edit' do
-    get :edit, id: @article
+    get :edit, params: { id: @article }
     expect(response.status).to eq 200
   end
 
   it 'should update article' do
-    patch :update, id: @article, article: { author_id: Author.first.id, body: @article.body, published: @article.published, title: @article.title }
+    patch :update, params: { id: @article, article: { author_id: Author.first.id, body: @article.body, published: @article.published, title: @article.title } }
 
     expect(response).to redirect_to(article_path(assigns(:article)))
   end
 
   it 'should destroy article' do
     expect do
-      delete :destroy, id: @article
+      delete :destroy, params: { id: @article }
     end.to change { Article.count }.by(-1)
 
     expect(response).to redirect_to(administrator_articles_path)
