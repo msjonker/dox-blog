@@ -4,18 +4,18 @@ unless Rails.env.production?
   Author.destroy_all
 end
 
-Author.where(name: "Bruno Miranda", email: "bmiranda@doximity.com", active: true).first_or_create
+Author.where(name: "John Doe", email: "jdoe@doximity.com", active: true).first_or_create
 
-1000.times do |i|
-  Article.where(title: Faker::Lorem.sentence(rand(3)+2)).first_or_create(
-    body: Faker::Lorem.paragraph(rand(30)+30),
-    published: true,
-    author: Author.first,
-    featured: false,
-    subtitle: nil,
-    hero_image_name: rand(2) == 1 ? 'beach.jpg' : 'airplane.jpg'
-  )
-end
+
+Article.where(title: Faker::Lorem.sentence(rand(3)+2)).first_or_create(
+  body: Faker::Lorem.paragraph(rand(30)+30),
+  published: true,
+  author: Author.first,
+  featured: false,
+  subtitle: nil,
+  hero_image_name: rand(2) == 1 ? 'beach.jpg' : 'airplane.jpg'
+)
+
 
 about_us = "In an industry where interoperability plagues the progress of health IT, our engineers have already
 figured out how to get iPhones to talk to fax machines. And we’re just getting started."
@@ -28,14 +28,6 @@ Page.where(
   author: Author.first,
   subtitle: "Page Subtitle",
   hero_image_name: 'airplane.jpg'
-).first_or_create
-
-Page.where(
-  title: "Engineering Stack",
-  body: "More to come...",
-  published: true,
-  author: Author.first,
-  hero_image_name: 'beach.jpg'
 ).first_or_create
 
 HeroImage.where(name: "airplane.jpg").first_or_create
