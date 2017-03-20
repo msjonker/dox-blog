@@ -2,7 +2,7 @@
 
 We would like to thank you for taking the time to complete this assignment. We believe this to be an effective way at allowing you to show us your skills, on your own time, without the pressure of someone looking over your shoulder (like most live whiteboard tests). Your code will be used to help us decide if we'd like to proceed with the interview process. Please understand that completing this assignment doesn't guarantee a job or follow up interviews. We will keep you posted either way. Please reach out to jobs@doximity.com with any questions.
 
-Note that it should take you 2-3 hours to complete this assignment.
+Note that it should take you 2-4 hours to complete this assignment.
 
 
 ### Setup
