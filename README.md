@@ -22,7 +22,7 @@ Run `bundle exec rspec`
 * The tests included are very basic, better tests are encouraged particularly for logic you added.
 * Please refrain from including unnecessary gems or spending time on CSS.
 * Avoid pushing indentation changes to current files, this makes the changeset harder to read.
-* The use any kind of JavaScript front-end enhacements is 100% optional, feel free to add as you see fit if time permits and you'd like to show your skills. One idea: in place search result suggestions.
+* The use any kind of JavaScript front-end enhacements is 100% optional, feel free to add if you'd like to show your skills. This should NOT be where you spend most of your time. One idea: in place search result suggestions.
 * Once completed, email a link to your Pull Request to jobs@doximity.com
 
 
