@@ -2,7 +2,7 @@
 
 We would like to thank you for taking the time to complete this assignment. We believe this to be an effective way at allowing you to show us your skills, on your own time, without the pressure of someone looking over your shoulder (like most live whiteboard tests). Your code will be used to help us decide if we'd like to proceed with the interview process. Please understand that completing this assignment doesn't guarantee a job or follow up interviews. We will keep you posted either way. Reach out to point of contact at Doximity with any questions.
 
-Note that it should take you 2-4 hours to complete this assignment.
+_Note that it should take you 2-4 hours to complete this assignment._
 
 
 ### Setup
@@ -13,12 +13,17 @@ Run `bin/setup` and then boot the app with `rails server`
 
 Run `bundle exec rspec`
 
-------------
+
+## How to Submit your Completed Assignment
+
+1. Fork the `dox-blog` repository.
+2. In the `dox-blog` project tab, click on `Members`. Under `Project members`, click on the `Add member` tab. Under `Select members to invite`, please type in `doximity-review` and choose the `Reporter` role permission. When done, click `Add to project`. This will enable us to review your challenge submission (turned in as a `Merge Request`) when complete.
+3. In the forked `dox-blog` project, create a new branch `lastname-firstname`. Work on the assignment and commit your changes to the `lastname-firstname` branch.
+4. After completing the assignment and having committed all your changes, create a new `Merge Request`. Add `doximi
+
 
 ## Please Read the Following Carefully
 
-* **FORK** this repository, create a branch, complete all 3 stories and create a merge request. If you're not sure how to do, [see instructions](https://vimeo.com/227828054/562c3f6acf).
-* **Grant @doximity-review access to your fork.**
 * Code Style Guide can be found [here](https://github.com/bbatsov/ruby-style-guide), use 2 soft-tabs.
 * The tests included are very basic, better tests are encouraged particularly for logic you added.
 * Please refrain from including unnecessary gems or spending time on CSS.
@@ -63,6 +68,6 @@ have a havier relevancy weight.
 
 ## What to Expect after you Submit
 
-Our team will be notified and we'll review the submission within 2 days. We'll check for complexity, test coverage, and adherence to style. We're looking for clean, easy to read, maintainable code. Good test coverage, and performance considerations are a plus as well.
+Our team will be notified and we'll review the submission within 3 days. We'll check for complexity, test coverage, and adherence to style. We're looking for clean, easy to read, maintainable code. Good test coverage, and performance considerations are a plus as well.
 
 We know your time is valuable and appreciate you taking the time to complete this assignment.
