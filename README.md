@@ -19,7 +19,7 @@ Run `bundle exec rspec`
 1. Fork the `dox-blog` repository.
 2. In the `dox-blog` project tab, click on `Members`. Under `Project members`, click on the `Add member` tab. Under `Select members to invite`, please type in `doximity-review` and choose the `Reporter` role permission. When done, click `Add to project`. This will enable us to review your challenge submission (turned in as a `Merge Request`) when complete.
 3. In the forked `dox-blog` project, create a new branch `lastname-firstname`. Work on the assignment and commit your changes to the `lastname-firstname` branch.
-4. After completing the assignment and having committed all your changes, create a new `Merge Request`. Add `doximi
+4. After completing the assignment and having committed all your changes, create a new `Merge Request`.
 
 
 ## Please Read the Following Carefully
@@ -28,7 +28,7 @@ Run `bundle exec rspec`
 * The tests included are very basic, better tests are encouraged particularly for logic you added.
 * Please refrain from including unnecessary gems or spending time on CSS.
 * Avoid pushing indentation changes to current files, this makes the changeset harder to read.
-* The use of any kind of JavaScript front-end enhacements is 100% optional, feel free to add if you'd like to show your skills. This should NOT be where you spend most of your time. One idea: in place search result suggestions.
+* The use of any kind of JavaScript front-end enhancements is 100% optional, feel free to add if you'd like to show your skills. This should NOT be where you spend most of your time. One idea: in place search result suggestions.
 * Once completed, email a link of your merge request to your point of contact at Doximity.
 
 
@@ -63,7 +63,7 @@ Incorporate this relevancy score in the sort order of the search results.
 Search against article body and title. An article that contains the same
 word twice would have a relevancy score that is higher than an article
 which only contains the searched word once. Title of the article should
-have a havier relevancy weight.
+have a heavier relevancy weight.
 ```
 
 ## What to Expect after you Submit
