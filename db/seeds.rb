@@ -33,5 +33,5 @@ Page.where(
 HeroImage.where(name: "airplane.jpg").first_or_create
 HeroImage.where(name: "beach.jpg").first_or_create
 
-articles_csv = File.new File.join(Rails.root, 'db', 'data', 'articles.csv')
-Article.import(articles_csv)
+articles_csv_path = File.join(Rails.root, 'db', 'data', 'articles.csv')
+ArticlesImporter.import(articles_csv_path)
