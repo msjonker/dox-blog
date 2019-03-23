@@ -9,4 +9,9 @@ class ArticlesController < ApplicationController
 
   def show
   end
+
+  def search
+    @articles = Article.published.containing_text(params[:query]).
+        paginate(page: params[:page], per_page: 5)
+  end
 end
