@@ -1,4 +1,4 @@
-ruby ENV['CUSTOM_RUBY_VERSION'] || '2.2.2'
+ruby ENV['CUSTOM_RUBY_VERSION'] || '2.4.5'
 
 source 'https://rubygems.org'
 
