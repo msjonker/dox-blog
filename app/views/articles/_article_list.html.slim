@@ -11,9 +11,9 @@
               = link_to article_path(article) do
                 - img = "heroes/#{img}"
                 .hero-secondary style='background-image: url("#{asset_path(img)}")'
-                  h1 = article.title
+                  h1 = markdown(emphasize_query_tokens(article.title, params[:query]))
             p.article-body
-              = markdown(article.body || 'No content')
+              = markdown(emphasize_query_tokens(article.body, params[:query]) || 'No content')
             p.meta
               = article.created_at.strftime("%b %d, %Y")
               span.stick<> |
@@ -24,9 +24,9 @@
     .col-1-4
       .search
         | Search Articles
-        = form_for "", url: search_articles_path, method: :get do |form|
+        = form_for '', url: search_articles_path, method: :get do |form|
           p
-            = form.text_field :query
+            = form.text_field :query, required: 'required'
             = form.submit :search
 
           div.load.hide

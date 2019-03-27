@@ -20,6 +20,13 @@ module ApplicationHelper
     end
   end
 
+  def emphasize_query_tokens(text, query)
+    return text unless query
+    tokens = Searchable.tokenize query
+    regex = Searchable.to_word_delimited_regex(tokens)
+    text.gsub(regex) { "**#{$&}**" }
+  end
+
   private
 
   def markdown_options

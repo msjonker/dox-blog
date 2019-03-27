@@ -11,7 +11,7 @@ class ArticlesController < ApplicationController
   end
 
   def search
-    @articles = Article.search(Article.published, params[:query], {title: {boost: 2}, body: {}})
+    @articles = Article.search(Article.published, [:title, :body], params[:query])
       .paginate(page: params[:page], per_page: 5)
   end
 end

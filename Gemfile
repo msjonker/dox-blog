@@ -27,7 +27,7 @@ end
 
 group :test do
   gem 'database_cleaner'
-  gem 'selenium-webdriver'
+  gem 'selenium-webdriver', '~> 3.4.0'
   gem 'rails-controller-testing'
 end
 
