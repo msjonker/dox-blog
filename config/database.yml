@@ -3,9 +3,8 @@ default: &default
   encoding: utf8
   pool: 5
   username: root
-  password: doximity
-  host: 127.0.0.1
-  port: 3306
+  password:
+  socket: /tmp/mysql.sock
 
 development:
   <<: *default
@@ -14,3 +13,8 @@ development:
 test:
   <<: *default
   database: dox_blog
+
+production:
+  <<: *default
+  database: dox_blog
+  url: <%= ENV['DATABASE_URL'] %>
